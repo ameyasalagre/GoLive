@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({extended: false}));   // to support URL-encoded b
 
 //intializing route files
 app.set('views', path.join(__dirname, './views/pages'));
-app.use(express.static(__dirname + '/views/css'));
+app.use(express.static(__dirname + '/views'));
 
 
 app.set('view engine', 'ejs');
