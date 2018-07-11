@@ -16,7 +16,11 @@ app.use(express.static(__dirname + '/views'));
 
 app.set('view engine', 'ejs');
 const home = require('./routes/home');
+const search_result = require('./routes/joinroom');
+app.use('/result',search_result);
 app.use('/home', home);
+
+
 
 
 

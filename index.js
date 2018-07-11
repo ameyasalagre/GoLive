@@ -1,15 +1,19 @@
 'use strict';
 
-var http = require('http');
+const app = require('./app');
+
+
+var http = require('http').Server(app);
 
 var PORT = process.env.PORT || 80;
 
 
-const app = require('./app');
 
-var server = http.createServer(app);
+var io = require('socket.io').listen(http);
 
 
-server.listen(PORT);
+
+
+http.listen(PORT);
 
 console.log('server running on '+PORT+'....');
